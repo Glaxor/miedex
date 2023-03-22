@@ -6,6 +6,7 @@ import Seo from "../components/seo";
 const IndexPage = () => {
   return (
     <Layout pageTitle="Home Page">
+      <h1 className="text-3xl font-bold underline ">Hello world!</h1>
       <p>I'm making this by following the Gatsby Tutorial.</p>
       <StaticImage
         alt="Clifford, a reddish-brown pitbull, dozing in a bean bag chair"
