@@ -10,7 +10,7 @@ const Header = () => {
   };
 
   return (
-    <nav className="flex items-center justify-between flex-wrap p-4">
+    <nav className="flex items-center justify-between flex-wrap pt-4 pb-4">
       <div className="flex items-center flex-shrink-0 text-red-600 mr-6">
         <svg
           className="fill-current h-8 w-8 mr-1"
@@ -53,19 +53,19 @@ const Header = () => {
             href="#responsive-header"
             className="block mt-4 lg:inline-block lg:mt-0 text-emerald-900 -200 hover:text-grey mr-4"
           >
-            Docs
+            Bpo Services
           </a>
           <a
             href="#responsive-header"
             className="block mt-4 lg:inline-block lg:mt-0 text-teal-800 hover:text-grey mr-4"
           >
-            Examples
+            Software Development
           </a>
           <a
             href="#responsive-header"
             className="block mt-4 lg:inline-block lg:mt-0 text-teal-800 hover:text-grey mr-4"
           >
-            Blog
+            Graphic Design
           </a>
         </div>
         <div>

@@ -3,10 +3,10 @@ import { StaticImage } from "gatsby-plugin-image";
 
 const Hero = () => {
   return (
-    <section className="text-gray-600 body-font">
+    <section className="text-gray-600 body-font bg-[conic-gradient(at_bottom_left,_var(--tw-gradient-stops))] from-yellow-50 via-cyan-100 to-red-100  rounded-xl">
       <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
-        <div className="lg:flex-grow md:w-2/ lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-          <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
+        <div className="lg:flex-grow md:w-2/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+          <h1 className="title-font sm:text-4xl text-3xl mb-4  font-semibold text-cyan-900">
             Before they sold out
           </h1>
           <p className="mb-8 leading-relaxed">
@@ -30,10 +30,11 @@ const Hero = () => {
             </a>
           </div>
         </div>
-        <div className="lg:max-md lg:w-full md:w-1/2 w-5/6">
+        <div className="lg:max-w-md lg:w-full md:w-1/2 w-5/6">
           <StaticImage
+            imgClassName="object-cover object-center rounded"
             alt="Clifford, a reddish-brown pitbull, dozing in a bean bag chair"
-            src="../images/clifford.jpg"
+            src="../images/January_life_style_working_63.jpg"
           />
         </div>
       </div>
