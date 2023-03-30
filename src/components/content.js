@@ -1,7 +1,8 @@
 import * as React from "react";
 import { StaticImage } from "gatsby-plugin-image";
+import { Link } from "gatsby";
 
-const ContentCard = ({ title, description, icon }) => {
+const ContentCard = ({ title, description, icon, to }) => {
   return (
     <div className="xl:w-1/3 md:w-1/2 p-4 max-w-xs w-full transition duration-300 ease-in-out hover:scale-110 ">
       <div className="relative border-0 border-gray-200 p-6 rounded-lg">
@@ -19,9 +20,10 @@ const ContentCard = ({ title, description, icon }) => {
     opacity-0 transition duration-300 ease-in-out hover:opacity-50"
         ></div>
       </div>
-      <a
+
+      <Link
         className="group inline-flex items-center h-9 rounded-full text-sm font-semibold whitespace-nowrap px-3 focus:outline-none focus:ring-2 bg-slate-100 text-slate-700 hover:bg-slate-200 hover:text-slate-900 focus:ring-slate-500 dark:bg-slate-700 dark:text-slate-100 dark:hover:bg-slate-600 dark:hover:text-white dark:focus:ring-slate-500 mt-6"
-        href="https://headlessui.dev"
+        to={to}
       >
         Learn more
         <span className="sr-only">
@@ -40,7 +42,7 @@ const ContentCard = ({ title, description, icon }) => {
         >
           <path d="M0 0L3 3L0 6"></path>
         </svg>
-      </a>
+      </Link>
     </div>
   );
 };
@@ -79,6 +81,7 @@ const Content = () => {
                 />
               </svg>
             }
+            to="/bpo"
           />
           <ContentCard
             title={"Software Development"}
@@ -99,6 +102,7 @@ const Content = () => {
                 />
               </svg>
             }
+            to="/development"
           />
           <ContentCard
             title={"Graphic Design"}
@@ -119,6 +123,7 @@ const Content = () => {
                 />
               </svg>
             }
+            to="/design"
           />
         </div>
       </div>

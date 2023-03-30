@@ -1,8 +1,27 @@
 import * as React from "react";
 import { useState } from "react";
 import classNames from "classnames";
+import { Link } from "gatsby";
 
-const Header = () => {
+const MenuItem = ({ title, to, pageTitle }) => {
+  console.log(pageTitle === title);
+  return (
+    <Link
+      className={classNames(
+        "block mt-4 lg:inline-block lg:mt-0 text-emerald-900 -200 hover:text-grey mr-4 transition ease-in-out delay-50 hover:border-emerald-900 border-b-2 ",
+        {
+          "border-b-2 border-emerald-900": pageTitle == title,
+          "border-transparent": pageTitle != title,
+        }
+      )}
+      to={to}
+    >
+      {title}
+    </Link>
+  );
+};
+
+const Header = ({ pageTitle }) => {
   const [isToggled, toggle] = useState(false);
   const callback = () => {
     console.log(isToggled);
@@ -11,22 +30,24 @@ const Header = () => {
 
   return (
     <nav className="flex items-center justify-between flex-wrap pt-4 pb-4">
-      <div className="flex items-center flex-shrink-0 text-red-600 mr-6">
-        <svg
-          className="fill-current h-8 w-8 mr-1"
-          width="56"
-          height="56"
-          viewBox="0 0 54 54"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g transform="rotate(0 27 27)">
-            <path d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z" />
-          </g>
-        </svg>
-        <span className="font-semibold text-2xl tracking-tight text-cyan-800">
-          zephyr
-        </span>
-      </div>
+      <Link to="/">
+        <div className="flex items-center flex-shrink-0 text-red-600 mr-6">
+          <svg
+            className="fill-current h-8 w-8 mr-1"
+            width="56"
+            height="56"
+            viewBox="0 0 54 54"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g transform="rotate(0 27 27)">
+              <path d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z" />
+            </g>
+          </svg>
+          <span className="font-semibold text-2xl tracking-tight text-cyan-800">
+            zephyr
+          </span>
+        </div>
+      </Link>
       <div className="block lg:hidden">
         <button
           onClick={callback}
@@ -49,35 +70,22 @@ const Header = () => {
             "lg:inline-block lg:ml-auto": isToggled,
           })}
         >
-          <a
-            href="#responsive-header"
-            className="block mt-4 lg:inline-block lg:mt-0 text-emerald-900 -200 hover:text-grey mr-4"
-          >
-            BPO Services
-          </a>
-          <a
-            href="#responsive-header"
-            className="block mt-4 lg:inline-block lg:mt-0 text-teal-800 hover:text-grey mr-4"
-          >
-            Software Development
-          </a>
-          <a
-            href="#responsive-header"
-            className="block mt-4 lg:inline-block lg:mt-0 text-teal-800 hover:text-grey mr-4"
-          >
-            Graphic Design
-          </a>
-        </div>
-        <div>
-          <button class="inline-flex text-sm px-4 py-2 leading-none border bg-cyan-800 rounded text-white border-emerald-500 hover:border-transparent hover:text-emerald-900 hover:bg-white mt-4 lg:mt-0">
+          <MenuItem title="BPO Services" to="/bpo" pageTitle={pageTitle} />
+          <MenuItem
+            title="Software Development"
+            to="/development"
+            pageTitle={pageTitle}
+          />
+          <MenuItem title="Graphic Design" to="/design" pageTitle={pageTitle} />
+          <button className="inline-flex text-sm px-4 py-2 leading-none border bg-cyan-800 rounded text-white border-emerald-500 hover:border-transparent hover:text-white hover:opacity-60 mt-4 lg:mt-0">
             <svg
-              class="fill-current w-4 h-4 mr-2"
+              className="fill-current w-4 h-4 mr-2"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="w-4 h-4 mr-1"
+              class="w-4 h-4 mr-1"
             >
               <path
                 strokeLinecap="round"

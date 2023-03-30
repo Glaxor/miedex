@@ -1,14 +1,7 @@
 import * as React from "react";
-import { Link, useStaticQuery, graphql } from "gatsby";
+import { useStaticQuery, graphql } from "gatsby";
 import Header from "./header";
-import {
-  container,
-  heading,
-  navLinks,
-  navLinkItem,
-  navLinkText,
-  siteTitle,
-} from "./layout.module.css";
+import { container } from "./layout.module.css";
 import Footer from "./footer";
 
 const Layout = ({ pageTitle, children }) => {
@@ -24,7 +17,7 @@ const Layout = ({ pageTitle, children }) => {
 
   return (
     <div className={container}>
-      <Header />
+      <Header pageTitle={pageTitle} />
       <main>{children}</main>
       <Footer />
     </div>
