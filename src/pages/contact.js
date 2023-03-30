@@ -33,7 +33,7 @@ const ContactPage = () => {
     setServerState({ submitting: true });
     await axios({
       method: "post",
-      url: "http://localhost:8080/contact", //"https://contactserver-zdvw5gogbq-uc.a.run.app/contact/",
+      url: "https://contactserver-zdvw5gogbq-uc.a.run.app/contact/", //"http://localhost:8080/contact", //
       data: body,
     })
       .then((r) => {
